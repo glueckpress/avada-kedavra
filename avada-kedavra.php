@@ -6,7 +6,7 @@
  * Author URI:  http://glueckpress.com/
  * Plugin URI:  https://github.com/glueckpress/avada-kedavra
  * License:     GPLv2 or later
- * Version:     0.1
+ * Version:     0.2
  *
  * PHP Version: 5.2
  */
@@ -41,6 +41,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function avada_kedavra() {
 
-	remove_all_shortcodes();
+	global $shortcode_tags;
+
+	$core = array( 'audio', 'wp_caption', 'caption', 'embed', 'gallery', 'video', 'playlist' );
+
+	foreach( $shortcode_tags as $tag => $function ) {
+
+		if( ! in_array( $tag, $core ) ) {
+
+			remove_shortcode( $tag );
+		}
+	}
+
 }
-add_action( 'after_setup_theme', 'avada_kedavra', 99 );
+add_action( 'after_setup_theme', 'avada_kedavra', PHP_INT_MAX );

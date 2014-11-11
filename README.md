@@ -1,10 +1,10 @@
 # Avada Kedavra
 
-Disables ALL WordPress shortcodes at once.
+Disables all WordPress shortcodes registered from themes and plugins.
 
 ## Description
 
-This simple WordPress plugin disables **all** WordPress shortcodes when activated. Shortcode tags in your content will remain perfectly intact, just to demonstrate what a mess your site will look like when a theme tempts you to build your content based on shortcodes.
+This simple WordPress plugin disables all WordPress shortcodes registered from external plugins and themes when activated. Shortcode tags in your content will remain perfectly intact, just to demonstrate what a mess your site will look like when a theme tempts you to build your content based on shortcodes.
 
 ## Installation
 
@@ -18,15 +18,16 @@ No. Shortcode tags will not be stripped. They stay intact, but they will not be 
 
 ### Does the plugin distinct between WordPress core shortcodes and others registered by themes or plugins?
 
-The plugin will just disable all the shortcodes, even the ones from WordPress core. According to [this Codex page](http://codex.wordpress.org/Shortcode), those are:
+Yes, it does now. As of WordPress 4.0, shortcodes registered in WordPress’ core are:
 
 * [audio]
 * [caption]
 * [embed]
 * [gallery]
 * [video]
+* [playlist]
 
-However, when you’re dealing with sample content from one of those real “premium” themes, those WordPress core shortcodes hardly add any significant measure of disorder to your already messed up posts and pages.
+The plugin will filter those out and disable all other shortcodes registered externally.
 
 ### What’s with the name of this plugin?
 
@@ -49,6 +50,11 @@ _…until the theme is disabled and all the shortcodes are gone. This plugin sim
 ![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-3.png)
 
 ## Changelog
+
+## 0.2
+
+* Added `PHP_INT_MAX` as priority, props @boiteaweb.
+* Added filtering for core shortcodes.
 
 ## 0.1
 
