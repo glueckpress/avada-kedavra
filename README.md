@@ -57,6 +57,13 @@ _…until the theme is disabled and all the shortcodes are gone. This plugin sim
 
 ## Changelog
 
+### 0.4
+
+* Added admin notices.
+* Added early bailing if logged-in user cannot manage plugins.
+* Added i18n and POT file.
+* Added German language files.
+
 ### 0.3
 
 * Whitelisted shortcodes registered by core and plugins. Good thinking, @GaryJones!
