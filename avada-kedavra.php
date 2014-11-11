@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: Avada Kedavra
- * Description: Disables ALL shortcodes at once.
+ * Description: Disables shortcodes set by active theme.
  * Author:      Caspar Hübinger
  * Author URI:  http://glueckpress.com/
  * Plugin URI:  https://github.com/glueckpress/avada-kedavra
  * License:     GPLv2 or later
- * Version:     0.3-beta
+ * Version:     0.3
  *
  * PHP Version: 5.2
  */
@@ -29,28 +29,37 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-/* Exit when accessed directly. */
+
+/* Occlumens. */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function avada_kedavra__white_list() {
+
+/**
+ * Send a Patronus first to whitelist shortocdes registeres by core or plugins.
+ *
+ * @return void
+ */
+function avada_kedavra__patronus() {
 
 	global $shortcode_tags;
 
-	$plugins_scs = array();
+	$whitelist = array();
 
 	foreach( $shortcode_tags as $tag => $function ) {
 
-		array_push( $plugins_scs, $tag );
+		array_push( $whitelist, $tag );
 	}
 
-	set_transient( 'avada_kedavra_whitelisted_shotcodes', $plugins_scs );
+	// Expecto Patronum!
+	set_transient( 'avada_kedavra_whitelisted_shotcodes', $whitelist );
 }
-add_action( 'plugins_loaded', 'avada_kedavra__white_list' );
+add_action( 'plugins_loaded', 'avada_kedavra__patronus' );
+
 
 /**
- * Kiss. My. Ass.
+ * Flash of green light.
  *
  * @return void
  */
@@ -58,16 +67,21 @@ function avada_kedavra() {
 
 	global $shortcode_tags;
 
-	$whitelist = get_transient( 'avada_kedavra_whitelisted_shotcodes' );
+	// Add any custom shortcode tags to the Patronus here.
+	$whitelist = apply_filters( 'avada_kedavra_whitelisted_shotcodes', get_transient( 'avada_kedavra_whitelisted_shotcodes' ) );
 
+	// Remove all shortcodes that have not been whitelisted up to here.
 	foreach( $shortcode_tags as $tag => $function ) {
 
+		// :pulls wand:
 		if( ! in_array( $tag, $whitelist ) ) {
 
+			// Avada kedavra!
 			remove_shortcode( $tag );
 		}
 	}
 
+	// Eat, Nagini.
 	delete_transient( 'avada_kedavra_whitelisted_shotcodes' );
 }
 add_action( 'after_setup_theme', 'avada_kedavra', PHP_INT_MAX );
