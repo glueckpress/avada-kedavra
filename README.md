@@ -20,12 +20,12 @@ No. Shortcode tags will not be stripped. They stay intact, but they will not be 
 
 Yes, it does. As of WordPress 4.0, shortcodes registered in WordPress’ core are:
 
-* [audio]
-* [caption]
-* [embed]
-* [gallery]
-* [video]
-* [playlist]
+* `[audio]`
+* `[caption]`
+* `[embed]`
+* `[gallery]`
+* `[video]`
+* `[playlist]`
 
 The plugin will look for those as well as for any shortcodes registered by any plugins upon `plugins_loaded` and whitelist all of those. It then will disable all other shortcodes registered after `plugins_loaded` upon `after_setup_theme`.
 
