@@ -6,7 +6,7 @@
  * Author URI:  http://glueckpress.com/
  * Plugin URI:  https://github.com/glueckpress/avada-kedavra
  * License:     GPLv2 or later
- * Version:     0.2
+ * Version:     0.3-beta
  *
  * PHP Version: 5.2
  */
@@ -34,6 +34,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+function avada_kedavra__white_list() {
+
+	global $shortcode_tags;
+
+	$plugins_scs = array();
+
+	foreach( $shortcode_tags as $tag => $function ) {
+
+		array_push( $plugins_scs, $tag );
+	}
+
+	set_transient( 'avada_kedavra_whitelisted_shotcodes', $plugins_scs );
+}
+add_action( 'plugins_loaded', 'avada_kedavra__white_list' );
+
 /**
  * Kiss. My. Ass.
  *
@@ -43,15 +58,16 @@ function avada_kedavra() {
 
 	global $shortcode_tags;
 
-	$core = array( 'audio', 'wp_caption', 'caption', 'embed', 'gallery', 'video', 'playlist' );
+	$whitelist = get_transient( 'avada_kedavra_whitelisted_shotcodes' );
 
 	foreach( $shortcode_tags as $tag => $function ) {
 
-		if( ! in_array( $tag, $core ) ) {
+		if( ! in_array( $tag, $whitelist ) ) {
 
 			remove_shortcode( $tag );
 		}
 	}
 
+	delete_transient( 'avada_kedavra_whitelisted_shotcodes' );
 }
 add_action( 'after_setup_theme', 'avada_kedavra', PHP_INT_MAX );
