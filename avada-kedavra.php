@@ -142,6 +142,6 @@ function avada_kedavra__howler() {
 		sprintf( '<div class="update-nag"><h3>%1$s</h3><p><strong>%2$s</strong><br />%3$s</p></div>',
 			__( 'Heads up!', 'avada-kedavra' ),
 			__( 'Avada Kedavra has temporarily disabled all shortcodes registered by your theme!', 'avada-kedavra' ),
-			__( 'Visit the front-end of your site to see what your content will look in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.', 'avada-kedavra' )
+			__( 'Visit the front-end of your site to see what your content will look like in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.', 'avada-kedavra' )
 		) );
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avada Kedavra\n"
-"POT-Creation-Date: 2014-11-11 18:58+0100\n"
-"PO-Revision-Date: 2014-11-11 19:03+0100\n"
+"POT-Creation-Date: 2014-11-11 19:14+0100\n"
+"PO-Revision-Date: 2014-11-11 19:15+0100\n"
 "Last-Translator: Caspar Huebinger <caspar@glueckpress.com>\n"
 "Language-Team: Caspar Huebinger <caspar@glueckpress.com>\n"
 "Language: de_DE\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: avada-kedavra.php:121
+#: avada-kedavra.php:128
 msgid "All good!"
 msgstr "Alles gut!"
 
-#: avada-kedavra.php:122
+#: avada-kedavra.php:129
 msgid ""
 "Avada Kedavra hasn’t detected a single shortcode registered by your theme. "
 "You may hope your content will remain intact when you’ll switch themes some "
@@ -32,11 +32,11 @@ msgstr ""
 "Theme registriert worden wäre. Du darfst hoffen, dass deine Inhalte intakt "
 "bleiben, wenn du irgendwann in der Zukunft einmal das Theme wechselst."
 
-#: avada-kedavra.php:136
+#: avada-kedavra.php:143
 msgid "Heads up!"
 msgstr "Hoppla!"
 
-#: avada-kedavra.php:137
+#: avada-kedavra.php:144
 msgid ""
 "Avada Kedavra has temporarily disabled all shortcodes registered by your "
 "theme!"
@@ -44,10 +44,11 @@ msgstr ""
 "Avada Kedavra hat vorübergehend alle Shortcodes deaktiviert, die von deinem "
 "Theme registriert wurden."
 
-#: avada-kedavra.php:138
+#: avada-kedavra.php:145
+#, fuzzy
 msgid ""
-"Visit the front-end of your site to see what your content will look in the "
-"future by the time you might want to switch to another theme. To get "
+"Visit the front-end of your site to see what your content will look like in "
+"the future by the time you might want to switch to another theme. To get "
 "everything back in order, just deactivate the Avada Kedavra plugin, but be "
 "clear about your choice regarding your theme."
 msgstr ""

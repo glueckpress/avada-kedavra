@@ -35,5 +35,5 @@ msgid "Avada Kedavra has temporarily disabled all shortcodes registered by your 
 msgstr ""
 
 #: avada-kedavra.php:138
-msgid "Visit the front-end of your site to see what your content will look in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.
+msgid "Visit the front-end of your site to see what your content will look like in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.
 msgstr ""
