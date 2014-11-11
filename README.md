@@ -22,14 +22,18 @@ Guess…
 
 ## Screenshots
 
-![screenshot-1.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-1.png)
 _Content consisting of shortcodes, imported via theme options by a “premium” theme…_
+![screenshot-1.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-1.png)
 
-![screenshot-2.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-2.png)
+---
+
 _…sure looks nice in the front-end…_
+![screenshot-2.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-2.png)
 
-![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-3.png)
+---
+
 _…until the theme is disabled and all the shortcodes are gone. This plugin simulates what it looks like when shortcodes are not declared anymore._
+![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-3.png)
 
 ## Changelog
 
