@@ -6,7 +6,7 @@
  * Author URI:  http://glueckpress.com/
  * Plugin URI:  https://github.com/glueckpress/avada-kedavra
  * License:     GPLv2 or later
- * Version:     2014.11
+ * Version:     0.1
  *
  * PHP Version: 5.2
  */
