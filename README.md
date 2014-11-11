@@ -43,17 +43,24 @@ add_filter( 'avada_kedavra_whitelisted_shotcodes', 'your_extend_function_here' )
 ## Screenshots
 
 _Content consisting of shortcodes, imported via theme options by a “premium” theme…_
+
 ![screenshot-1.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-1.png)
 
 ---
 
 _…sure looks nice in the front-end…_
+
 ![screenshot-2.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-2.png)
 
 ---
 
 _…until the theme is disabled and all the shortcodes are gone. This plugin simulates what it looks like when shortcodes are not declared anymore._
+
 ![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-3.png)
+
+_As a logged-in user who can manage plugins, you will see an admin notice after the plugin has been activated, either informing you that your theme has registered shortcodes and they have been disabled temporarily, or that it hasn’t and that all is well._
+
+![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-4.png)
 
 ## Changelog
 
