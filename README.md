@@ -1,10 +1,10 @@
 # Avada Kedavra
 
-Disables all WordPress shortcodes registered from themes and plugins.
+Disables all WordPress shortcodes registered by active theme.
 
 ## Description
 
-This simple WordPress plugin disables all WordPress shortcodes registered from external plugins and themes when activated. Shortcode tags in your content will remain perfectly intact, just to demonstrate what a mess your site will look like when a theme tempts you to build your content based on shortcodes.
+This simple WordPress plugin disables all WordPress shortcodes registered by a theme. Shortcode tags in your content will remain perfectly intact, just to demonstrate what a mess your site will look like when a theme tempts you to build your content based on shortcodes.
 
 ## Installation
 
@@ -16,9 +16,9 @@ If you don’t know how to install a plugin for WordPress, [here’s how](http:/
 
 No. Shortcode tags will not be stripped. They stay intact, but they will not be parsed for as long as the plugin remains active. Deactivate the plugin, your site will look as it did before.
 
-### Does the plugin distinct between WordPress core shortcodes and others registered by themes or plugins?
+### Does the plugin distinct between shortcodes registered by themes and other shortcodes?
 
-Yes, it does now. As of WordPress 4.0, shortcodes registered in WordPress’ core are:
+Yes, it does. As of WordPress 4.0, shortcodes registered in WordPress’ core are:
 
 * [audio]
 * [caption]
@@ -27,7 +27,13 @@ Yes, it does now. As of WordPress 4.0, shortcodes registered in WordPress’ cor
 * [video]
 * [playlist]
 
-The plugin will filter those out and disable all other shortcodes registered externally.
+The plugin will look for those as well as for any shortcodes registered by any plugins upon `plugins_loaded` and whitelist all of those. It then will disable all other shortcodes registered after `plugins_loaded` upon `after_setup_theme`.
+
+If you want to extend the whitelist, you pass additional tags to the array via a filter:
+
+```php
+add_filter( 'avada_kedavra_whitelisted_shotcodes', 'your_extend_function_here' );
+```
 
 ### What’s with the name of this plugin?
 
@@ -51,11 +57,16 @@ _…until the theme is disabled and all the shortcodes are gone. This plugin sim
 
 ## Changelog
 
-## 0.2
+### 0.3
+
+* Whitelisted shortcodes registered by core and plugins. Good thinking, @GaryJones!
+* Added filter `avada_kedavra_whitelisted_shotcodes` to customize whitelist.
+
+### 0.2
 
 * Added `PHP_INT_MAX` as priority, props @boiteaweb.
 * Added filtering for core shortcodes.
 
-## 0.1
+### 0.1
 
 * Initial release.
