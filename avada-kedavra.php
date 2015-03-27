@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Avada Kedavra
- * Text Domain: aged-content-message
+ * Text Domain: avada-kedavra
  * Domain Path: /languages
- * Description: Disables shortcodes set by active theme.
+ * Description: Disables all WordPress shortcodes registered by the active theme.
  * Author:      Caspar Hübinger
  * Author URI:  http://glueckpress.com/
  * Plugin URI:  https://github.com/glueckpress/avada-kedavra
  * License:     GPLv2 or later
- * Version:     0.4
+ * Version:     0.5
  *
  * PHP Version: 5.2
  */
@@ -39,32 +39,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Send a Patronus first to whitelist shortocdes registeres by core or plugins.
+ * Send a Patronus first to whitelist shortcodes registeres by core or plugins.
  *
  * @return void
  */
 function avada_kedavra__patronus() {
 
-	global $current_user;
-
 	// No use for muggles.
-	if( ! current_user_can( 'activate_plugins' ) )
+	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
+	}
 
 	global $shortcode_tags;
 
-	$whitelist = array();
-
-	foreach( $shortcode_tags as $tag => $function )
-		array_push( $whitelist, $tag );
-
 	// Expecto Patronum!
-	set_transient( 'avada_kedavra_whitelisted_shotcodes', $whitelist );
+	set_transient( 'avada_kedavra_whitelisted_shortcodes', array_keys( (array) $shortcode_tags ) );
 
 	// Spells in multiple languages.
 	load_plugin_textdomain(
 		'avada-kedavra',
-		false,
+		FALSE,
 		dirname( plugin_basename( __FILE__ ) ) . '/languages'
 	);
 }
@@ -78,40 +72,35 @@ add_action( 'plugins_loaded', 'avada_kedavra__patronus' );
  */
 function avada_kedavra() {
 
-	global $current_user;
-
 	// Again, no use for muggles.
-	if( ! current_user_can( 'activate_plugins' ) )
+	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
+	}
 
 	global $shortcode_tags;
 
 	// Add any custom shortcode tags to the Patronus here.
-	$whitelist = apply_filters( 'avada_kedavra_whitelisted_shotcodes', get_transient( 'avada_kedavra_whitelisted_shotcodes' ) );
+	$whitelist = apply_filters(
+		'avada_kedavra_whitelisted_shortcodes',
+		(array) get_transient( 'avada_kedavra_whitelisted_shortcodes' )
+	);
+
+	// Eat, Nagini.
+	delete_transient( 'avada_kedavra_whitelisted_shortcodes' );
 
 	// This is going nowhere.
-	if( $whitelist === array_keys( $shortcode_tags ) ) {
+	if ( $whitelist === array_keys( (array) $shortcode_tags ) ) {
 		// Send an owl to logged-in user.
 		add_action( 'admin_notices', 'avada_kedavra__owl' );
+
 		return;
 	}
 
-	// Remove all shortcodes that have not been whitelisted up to here.
-	foreach( $shortcode_tags as $tag => $function ) {
-
-		// :pulls wand:
-		if( ! in_array( $tag, $whitelist ) ) {
-
-			// Avada kedavra!
-			remove_shortcode( $tag );
-		}
-	}
+	// Avada kedavra!
+	$shortcode_tags = array_intersect_key( $shortcode_tags, array_flip( $whitelist ) );
 
 	// Send howler to logged-in user.
 	add_action( 'admin_notices', 'avada_kedavra__howler' );
-
-	// Eat, Nagini.
-	delete_transient( 'avada_kedavra_whitelisted_shotcodes' );
 }
 add_action( 'after_setup_theme', 'avada_kedavra', PHP_INT_MAX );
 
@@ -119,29 +108,35 @@ add_action( 'after_setup_theme', 'avada_kedavra', PHP_INT_MAX );
 /**
  * Send owl when no shortcodes have been registered by theme.
  *
- * @return string
+ * @return void
  */
 function avada_kedavra__owl() {
 
-	echo apply_filters( 'avada_kedavra__owl',
-		sprintf( '<div class="updated"><h3>%1$s</h3><p>%2$s</p></div>',
-			__( 'All good!', 'avada-kedavra' ),
-			__( 'Avada Kedavra hasn’t detected a single shortcode registered by your theme. You may hope your content will remain intact when you’ll switch themes some time in the future.', 'avada-kedavra' )
-		) );
+	echo apply_filters(
+		'avada_kedavra__owl',
+		sprintf(
+			'<div class="updated"><h3>%s</h3><p>%s</p></div>',
+			__( "All good!", 'avada-kedavra' ),
+			__( "Avada Kedavra hasn't detected a single shortcode registered by your theme. You may hope your content will remain intact when you'll switch themes some time in the future.", 'avada-kedavra' )
+		)
+	);
 }
 
 
 /**
  * Send howler when shortcodes have been registered by theme.
  *
- * @return string
+ * @return void
  */
 function avada_kedavra__howler() {
 
-	echo apply_filters( 'avada_kedavra__howler',
-		sprintf( '<div class="update-nag"><h3>%1$s</h3><p><strong>%2$s</strong><br />%3$s</p></div>',
-			__( 'Heads up!', 'avada-kedavra' ),
-			__( 'Avada Kedavra has temporarily disabled all shortcodes registered by your theme!', 'avada-kedavra' ),
-			__( 'Visit the front-end of your site to see what your content will look like in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.', 'avada-kedavra' )
-		) );
+	echo apply_filters(
+		'avada_kedavra__howler',
+		sprintf(
+			'<div class="update-nag"><h3>%s</h3><p><strong>%s</strong><br>%s</p></div>',
+			__( "Heads up!", 'avada-kedavra' ),
+			__( "Avada Kedavra has temporarily disabled all shortcodes registered by your theme!", 'avada-kedavra' ),
+			__( "Visit the front-end of your site to see what your content will look like in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme.", 'avada-kedavra' )
+		)
+	);
 }
