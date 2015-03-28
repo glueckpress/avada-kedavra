@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Send a Patronus first to whitelist shortcodes registeres by core or plugins.
+ * Send a Patronus first to whitelist shortcodes registered by core or plugins.
  *
  * @return void
  */

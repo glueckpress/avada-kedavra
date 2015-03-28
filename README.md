@@ -68,7 +68,7 @@ _As a logged-in user who can manage plugins, you will see an admin notice after 
 
 * Fixed some typos.
 * Fixed text domain.
-* Update plugin description.
+* Updated plugin description.
 * Removed unused (global) variables.
 * Updated translations.
 * Improved some bits and pieces.
