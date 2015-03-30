@@ -8,7 +8,7 @@ This simple WordPress plugin disables all WordPress shortcodes registered by a t
 
 ## Installation
 
-If you don't know how to install a plugin for WordPress, [here's how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
+If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
 
 ## Frequently Asked Questions
 
@@ -18,7 +18,7 @@ No. Shortcode tags will not be stripped. They stay in place, but they will not b
 
 ### Does the plugin distinct between shortcodes registered by themes and other shortcodes?
 
-Yes, it does. As of WordPress 4.0, shortcodes registered in WordPress' core are:
+Yes, it does. As of WordPress 4.0, shortcodes registered in WordPress’ core are:
 
 * `[audio]`
 * `[caption]`
@@ -35,10 +35,10 @@ If you want to extend the whitelist, you pass additional tags to the array via a
 add_filter( 'avada_kedavra_whitelisted_shortcodes', 'your_extend_function_here' );
 ```
 
-### What's with the name of this plugin?
+### What’s with the name of this plugin?
 
 1. Guess…
-1. “Avada kedavra” is the deadly spell used by Lord Voldemort and his followers in J.K. Rowling's novel series of Harry Potter. I don't claim any ownership on the term whatsoever.
+1. “Avada kedavra” is the deadly spell used by Lord Voldemort and his followers in J.K. Rowling’s novel series of Harry Potter. I don’t claim any ownership on the term whatsoever.
 
 ## Screenshots
 
@@ -58,7 +58,7 @@ _…until the theme is disabled and all the shortcodes are gone. This plugin sim
 
 ![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-3.png)
 
-_As a logged-in user who can manage plugins, you will see an admin notice after the plugin has been activated, either informing you that your theme has registered shortcodes and they have been disabled temporarily, or that it hasn't and that all is well._
+_As a logged-in user who can manage plugins, you will see an admin notice after the plugin has been activated, either informing you that your theme has registered shortcodes and they have been disabled temporarily, or that it hasn’t and that all is well._
 
 ![screenshot-3.png](https://raw.githubusercontent.com/glueckpress/avada-kedavra/assets/screenshot-4.png)
 
