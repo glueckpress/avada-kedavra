@@ -71,7 +71,7 @@ _As a logged-in user who can manage plugins, you will see an admin notice after 
 * Updated plugin description.
 * Removed unused (global) variables.
 * Updated translations.
-* Improved some bits and pieces.
+* Improved general usage of PHP, props @tfrommen.
 
 ### 0.4
 
