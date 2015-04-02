@@ -1,58 +1,84 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Avada Kedavra\n"
+"Project-Id-Version: Avada Kedavra v0.5\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-11 19:14+0100\n"
-"PO-Revision-Date: 2014-11-11 19:15+0100\n"
+"PO-Revision-Date: 2015-03-27 20:09:48+0000\n"
 "Last-Translator: Caspar Huebinger <caspar@glueckpress.com>\n"
 "Language-Team: Caspar Huebinger <caspar@glueckpress.com>\n"
-"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
 
-#: avada-kedavra.php:128
+#: avada-kedavra.php:119
+#@ avada-kedavra
 msgid "All good!"
 msgstr "Alles gut!"
 
-#: avada-kedavra.php:129
-msgid ""
-"Avada Kedavra hasn’t detected a single shortcode registered by your theme. "
-"You may hope your content will remain intact when you’ll switch themes some "
-"time in the future."
-msgstr ""
-"Avada Kedavra hat nicht einen einzigen Shortcode gefunden, der von deinem "
-"Theme registriert worden wäre. Du darfst hoffen, dass deine Inhalte intakt "
-"bleiben, wenn du irgendwann in der Zukunft einmal das Theme wechselst."
-
-#: avada-kedavra.php:143
+#: avada-kedavra.php:137
+#@ avada-kedavra
 msgid "Heads up!"
 msgstr "Hoppla!"
 
-#: avada-kedavra.php:144
-msgid ""
-"Avada Kedavra has temporarily disabled all shortcodes registered by your "
-"theme!"
-msgstr ""
-"Avada Kedavra hat vorübergehend alle Shortcodes deaktiviert, die von deinem "
-"Theme registriert wurden."
+#: avada-kedavra.php:138
+#@ avada-kedavra
+msgid "Avada Kedavra has temporarily disabled all shortcodes registered by your theme!"
+msgstr "Avada Kedavra hat vorübergehend alle Shortcodes deaktiviert, die von deinem Theme registriert wurden."
 
-#: avada-kedavra.php:145
+#: avada-kedavra.php:139
 #, fuzzy
-msgid ""
-"Visit the front-end of your site to see what your content will look like in "
-"the future by the time you might want to switch to another theme. To get "
-"everything back in order, just deactivate the Avada Kedavra plugin, but be "
-"clear about your choice regarding your theme."
+#@ avada-kedavra
+msgid "Visit the front-end of your site to see what your content will look like in the future by the time you might want to switch to another theme. To get everything back in order, just deactivate the Avada Kedavra plugin, but be clear about your choice regarding your theme."
+msgstr "Besuche das Frontend deiner Site und sieh dir an, wie deine Inhalte aussehen werden, wenn du irgendwann in Zukunft einmal das Theme wechseln möchtest. Um alles wieder in Ordnung zu bringen, deaktiviere einfach das Plugin Avada Kedavra, aber sei dir der Implikation deiner Theme-Wahl bewusst."
+
+#. translators: plugin header field 'Name'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "Avada Kedavra"
 msgstr ""
-"Besuche das Frontend deiner Site und sieh dir an, wie deine Inhalte aussehen "
-"werden, wenn du irgendwann in Zukunft einmal das Theme wechseln möchtest. Um "
-"alles wieder in Ordnung zu bringen, deaktiviere einfach das Plugin Avada "
-"Kedavra, aber sei dir der Implikation deiner Theme-Wahl bewusst."
+
+#. translators: plugin header field 'PluginURI'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "https://github.com/glueckpress/avada-kedavra"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "Disables all WordPress shortcodes registered by the active theme."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "Caspar Hübinger"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "http://glueckpress.com/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: avada-kedavra.php:0
+#@ avada-kedavra
+msgid "0.5"
+msgstr ""
+
+#: avada-kedavra.php:120
+#@ avada-kedavra
+msgid "Avada Kedavra hasn't detected a single shortcode registered by your theme. You may hope your content will remain intact when you'll switch themes some time in the future."
+msgstr "Avada Kedavra hat nicht einen einzigen Shortcode gefunden, der von deinem Theme registriert worden wäre. Du darfst hoffen, dass deine Inhalte intakt bleiben, wenn du irgendwann in der Zukunft einmal das Theme wechselst."
+
